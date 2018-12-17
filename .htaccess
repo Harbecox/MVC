@@ -1,0 +1,19 @@
+#	RewriteEngine On
+#	Options +FollowSymlinks
+#	RewriteBase /
+#
+#            RewriteCond %{REQUEST_FILENAME} !-f
+#            RewriteCond %{REQUEST_FILENAME} !-d
+#	DirectoryIndex index.php
+#
+#	RewriteRule ^(.*)$ index.php [L]
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* index.php [L]
+
+<FilesMatch "\.(flv|swf|ico|gif|jpg|jpeg|png)$">
+	Header set Cache-Control "max-age=1"
+</FilesMatch>
+
