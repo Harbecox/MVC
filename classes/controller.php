@@ -13,7 +13,6 @@ abstract class Controller
         $this->model = new $model;
         $this->view = new View();
         $this->data = &$this->view->data;
-        // $this->checkPermision();
         $this->view->header = $this->model->getHeader();
         $this->view->footer = $this->model->getFooter();
         if($_POST){
